@@ -12,39 +12,34 @@ Runtime: better than copying, worse than
 passing by reference
 */
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
-class Printer
-{
-    public: 
-        void Print(const std::string& s)
-        {
-            std::cout << "Lvalue " << s << std::endl;
-            str_ = s;
-        }
+class Printer {
+public:
+  void Print(const std::string &s) {
+    std::cout << "Lvalue " << s << std::endl;
+    str_ = s;
+  }
 
-        void Print(std::string&& s)
-        {
-            std::cout << "Rvalue "<< s << std::endl;
-            // Now, hello variable memory got transferred to str_
-            str_ = std::move(s);
-        }
-    private:
-        std::string str_;
+  void Print(std::string &&s) {
+    std::cout << "Rvalue " << s << std::endl;
+    // Now, hello variable memory got transferred to str_
+    str_ = std::move(s);
+  }
 
+private:
+  std::string str_;
 };
 
-
-int main()
-{
-    Printer printer;
-    std::string blah{"BLAHHH !"};
-    printer.Print(blah);
-    printer.Print("Hello");
-    // we are saying we know it's l-value but treat it as rvlaue
-    printer.Print(std::move(blah)); 
-    // We should nver do anything like below, it has undefined behaviour
-    std::cout << "After Move: " << blah << std::endl;
-    return 0;
+int main() {
+  Printer printer;
+  std::string blah{"BLAHHH !"};
+  printer.Print(blah);
+  printer.Print("Hello");
+  // we are saying we know it's l-value but treat it as rvlaue
+  printer.Print(std::move(blah));
+  // We should nver do anything like below, it has undefined behaviour
+  std::cout << "After Move: " << blah << std::endl;
+  return 0;
 }
