@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build (C++26 Debug)",
+            "type": "cppbuild",
+            "command": "/usr/bin/g++-14",
+            "args": [
+                "-std=c++2c",
+                "-g",
+                "-O0",
+                "-Wall",
+                "-Wextra",
+                "-pthread",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build current file with g++-13 (C++26, debug symbols)"
+        },
+        {
+            "label": "Build (C++26 Release)",
+            "type": "cppbuild",
+            "command": "/usr/bin/g++-14",
+            "args": [
+                "-std=c++2c",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "-pthread",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Build current file with g++-13 (C++26, optimized)"
+        }
+    ]
+}

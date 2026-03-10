@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++-14",
+            "cStandard": "c23",
+            "cppStandard": "c++26",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-pthread"
+            ]
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,21 @@
+{
+    "C_Cpp.default.cppStandard": "c++26",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++-14",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "files.associations": {
+        "*.cpp": "cpp",
+        "*.hpp": "cpp",
+        "*.h": "cpp"
+    },
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "editor.suggest.showSnippets": false,
+    "editor.snippetSuggestions": "none",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    }
+}
